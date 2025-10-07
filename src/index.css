@@ -124,6 +124,10 @@ All colors MUST be HSL.
     animation: slideUp 0.8s ease-out forwards;
   }
   
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
   .animate-delay-200 {
     animation-delay: 0.2s;
   }
@@ -156,5 +160,14 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }

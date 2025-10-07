@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
+import phoneMockup from "@/assets/phone-mockup.png";
 
 const Hero = () => {
   const scrollToQR = () => {
@@ -14,7 +15,7 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-accent/70" />
       </div>
       
       {/* Content */}
@@ -22,11 +23,14 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-primary-foreground space-y-6 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Ride with Comfort and Ease
-            </h2>
-            <p className="text-lg md:text-xl text-primary-foreground/90 max-w-xl">
-              Raidoo – your reliable partner for smarter travel in Pakistan. 
+            <div className="inline-block">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative">
+                <span className="relative z-10">Ride with Comfort and Ease</span>
+                <div className="absolute -inset-4 bg-accent/20 blur-3xl -z-10 rounded-full" />
+              </h2>
+            </div>
+            <p className="text-lg md:text-xl text-primary-foreground/95 max-w-xl leading-relaxed">
+              Raidoo – your trusted ride partner for daily travel in Pakistan. 
               Book rides, connect with drivers, and enjoy convenience every day.
             </p>
             <Button 
@@ -38,17 +42,27 @@ const Hero = () => {
             </Button>
           </div>
           
-          {/* Right Content - QR Code Box */}
-          <div className="flex justify-center lg:justify-end animate-fade-in animate-delay-400">
-            <div id="qr-section" className="bg-card rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center space-y-4">
-              <h3 className="text-xl font-semibold text-card-foreground">
+          {/* Right Content - Phone Mockup & QR */}
+          <div className="flex flex-col items-center gap-8 animate-fade-in animate-delay-200">
+            {/* Phone Mockup */}
+            <div className="relative animate-float">
+              <img 
+                src={phoneMockup}
+                alt="Raidoo App Interface"
+                className="w-64 md:w-80 drop-shadow-2xl"
+              />
+            </div>
+            
+            {/* QR Code Box */}
+            <div id="qr-section" className="bg-card rounded-3xl p-6 shadow-2xl max-w-sm w-full text-center space-y-3">
+              <h3 className="text-lg font-semibold text-card-foreground">
                 Scan & Download the Raidoo App
               </h3>
-              <div className="bg-background p-4 rounded-xl inline-block">
+              <div className="bg-background p-3 rounded-xl inline-block">
                 <img 
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://play.google.com/store" 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play.google.com/store" 
                   alt="Download Raidoo App QR Code"
-                  className="w-48 h-48 mx-auto"
+                  className="w-40 h-40 mx-auto"
                 />
               </div>
               <p className="text-sm text-muted-foreground font-medium">
