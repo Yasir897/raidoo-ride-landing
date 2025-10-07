@@ -32,7 +32,7 @@ const Hero = () => {
             <Button 
               onClick={scrollToQR}
               size="lg"
-              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-lg px-8 py-6 rounded-full transition-all hover:scale-105 shadow-lg"
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-lg"
             >
               Get the App
             </Button>

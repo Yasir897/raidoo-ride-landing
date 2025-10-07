@@ -31,7 +31,7 @@ const RidersDrivers = () => {
           {audiences.map((audience, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border bg-card animate-slide-up"
+              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 border-border bg-card animate-slide-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <CardContent className="p-8 space-y-6">

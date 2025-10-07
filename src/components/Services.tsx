@@ -34,8 +34,8 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-border bg-card animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 border-border bg-card animate-slide-up"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <CardContent className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 mx-auto bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">

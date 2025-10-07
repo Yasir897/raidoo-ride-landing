@@ -19,7 +19,7 @@ const Header = () => {
           onClick={scrollToQR}
           variant="secondary"
           size="lg"
-          className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold rounded-full px-6 md:px-8 transition-all hover:scale-105"
+          className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold rounded-full px-6 md:px-8 transition-all duration-300 hover:scale-105 hover:shadow-lg"
         >
           Get the App
         </Button>
