@@ -19,12 +19,12 @@ const services = [
   },
 ];
 
-const WhatWeOffer = () => {
+const Services = () => {
   return (
-    <section id="what-we-offer" className="py-20 bg-background">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          What We Offer
+          Our Services
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Experience the convenience and reliability that makes Raidoo the smart choice for your daily travel
@@ -56,4 +56,4 @@ const WhatWeOffer = () => {
   );
 };
 
-export default WhatWeOffer;
+export default Services;

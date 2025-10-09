@@ -2,13 +2,11 @@ import { useState } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import AboutUs from "@/components/AboutUs";
+import TrustIndicators from "@/components/TrustIndicators";
 import AnimatedDivider from "@/components/AnimatedDivider";
-import WhatWeOffer from "@/components/Services";
+import Services from "@/components/Services";
 import RidersDrivers from "@/components/RidersDrivers";
-import Mission from "@/components/Mission";
-import Vision from "@/components/Vision";
-import ComingSoon from "@/components/ComingSoon";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -24,17 +22,13 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <AboutUs />
+        <TrustIndicators />
         <AnimatedDivider />
-        <WhatWeOffer />
+        <Services />
         <AnimatedDivider />
         <RidersDrivers />
         <AnimatedDivider />
-        <Mission />
-        <AnimatedDivider />
-        <Vision />
-        <AnimatedDivider />
-        <ComingSoon />
+        <Testimonials />
       </main>
       <Footer />
       <ScrollToTop />

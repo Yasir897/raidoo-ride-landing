@@ -1,51 +1,74 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
+import phoneMockup from "@/assets/phone-mockup.png";
 
 const Hero = () => {
-  const scrollToWaitlist = () => {
-    const waitlistSection = document.getElementById('waitlist');
-    waitlistSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToQR = () => {
+    const qrSection = document.getElementById('qr-section');
+    qrSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20">
+    <section className="relative min-h-screen flex items-center pt-20">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBackground})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-primary/30 to-accent/20" />
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-accent/70" />
+      </div>
       
       {/* Content */}
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Intro Animation - Raidoo text with glow */}
-          <div className="inline-block animate-fade-in">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary relative">
-              <span className="relative z-10">Raidoo</span>
-              <div className="absolute -inset-6 bg-primary/20 blur-3xl -z-10 rounded-full animate-pulse" />
-            </h1>
-          </div>
-          
-          {/* Main Slogan */}
-          <div className="animate-fade-in animate-delay-400">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-              The Smarter Way to Move
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mt-4 leading-relaxed">
-              Connecting riders and drivers with smarter, safer, and community-driven rides.
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="text-primary-foreground space-y-6 animate-fade-in">
+            <div className="inline-block">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative">
+                <span className="relative z-10">Ride with Comfort and Ease</span>
+                <div className="absolute -inset-4 bg-accent/20 blur-3xl -z-10 rounded-full" />
+              </h2>
+            </div>
+            <p className="text-lg md:text-xl text-primary-foreground/95 max-w-xl leading-relaxed">
+              Raidoo – your trusted ride partner for daily travel in Pakistan. 
+              Book rides, connect with drivers, and enjoy convenience every day.
             </p>
+            <Button 
+              onClick={scrollToQR}
+              size="lg"
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-lg"
+            >
+              Get the App
+            </Button>
           </div>
           
-          {/* CTA Button */}
-          <div className="animate-fade-in animate-delay-600">
-            <Button 
-              onClick={scrollToWaitlist}
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg px-10 py-7 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-lg"
-            >
-              Join the Waitlist
-            </Button>
+          {/* Right Content - Phone Mockup & QR */}
+          <div className="flex flex-col items-center gap-8 animate-fade-in animate-delay-200">
+            {/* Phone Mockup */}
+            <div className="relative animate-float">
+              <img 
+                src={phoneMockup}
+                alt="Raidoo App Interface"
+                className="w-64 md:w-80 drop-shadow-2xl"
+              />
+            </div>
+            
+            {/* QR Code Box */}
+            <div id="qr-section" className="bg-card rounded-3xl p-6 shadow-2xl max-w-sm w-full text-center space-y-3">
+              <h3 className="text-lg font-semibold text-card-foreground">
+                Scan & Download the Raidoo App
+              </h3>
+              <div className="bg-background p-3 rounded-xl inline-block">
+                <img 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play.google.com/store" 
+                  alt="Download Raidoo App QR Code"
+                  className="w-40 h-40 mx-auto"
+                />
+              </div>
+              <p className="text-sm text-muted-foreground font-medium">
+                Available on Google Play
+              </p>
+            </div>
           </div>
         </div>
       </div>
