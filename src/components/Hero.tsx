@@ -12,10 +12,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-accent/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-primary/40 to-accent/30" />
       </div>
       
       {/* Content */}
@@ -38,7 +38,7 @@ const Hero = () => {
               size="lg"
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300 hover:scale-110 hover:shadow-2xl shadow-lg"
             >
-              Get the App
+              Join the Waitlist
             </Button>
           </div>
           
