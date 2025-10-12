@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
           
           {/* Right Content - Phone Mockup */}
-          <div className="flex justify-end animate-fade-in animate-delay-200">
+          <div className="flex justify-end items-start animate-fade-in animate-delay-200 -mt-12 lg:-mt-20">
             {/* Phone Mockup */}
             <div className="relative animate-float">
               <img 
