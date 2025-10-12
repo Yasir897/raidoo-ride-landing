@@ -35,8 +35,8 @@ const Hero = () => {
             </p>
           </div>
           
-          {/* Right Content - Phone Mockup & QR */}
-          <div className="flex flex-col items-center gap-8 animate-fade-in animate-delay-200">
+          {/* Right Content - Phone Mockup */}
+          <div className="flex justify-end animate-fade-in animate-delay-200">
             {/* Phone Mockup */}
             <div className="relative animate-float">
               <img 
@@ -44,23 +44,6 @@ const Hero = () => {
                 alt="Raidoo App Interface"
                 className="w-64 md:w-80 drop-shadow-2xl"
               />
-            </div>
-            
-            {/* QR Code Box */}
-            <div id="qr-section" className="bg-card rounded-3xl p-6 shadow-2xl max-w-sm w-full text-center space-y-3">
-              <h3 className="text-lg font-semibold text-card-foreground">
-                Scan & Download the Raidoo App
-              </h3>
-              <div className="bg-background p-3 rounded-xl inline-block">
-                <img 
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play.google.com/store" 
-                  alt="Download Raidoo App QR Code"
-                  className="w-40 h-40 mx-auto"
-                />
-              </div>
-              <p className="text-sm text-muted-foreground font-medium">
-                Available on Google Play
-              </p>
             </div>
           </div>
         </div>
