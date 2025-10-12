@@ -1,4 +1,5 @@
 import { Target } from "lucide-react";
+import missionImage from "@/assets/mission-image.jpg";
 
 const Mission = () => {
   return (
@@ -24,8 +25,12 @@ const Mission = () => {
           
           {/* Image */}
           <div className="animate-slide-up animate-delay-200">
-            <div className="bg-primary/5 rounded-3xl p-8 flex items-center justify-center h-64">
-              <Target className="w-32 h-32 text-primary/20" />
+            <div className="rounded-3xl overflow-hidden shadow-2xl h-64">
+              <img 
+                src={missionImage} 
+                alt="Our Mission - Empowering Communities"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

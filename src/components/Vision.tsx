@@ -1,4 +1,5 @@
 import { Eye } from "lucide-react";
+import visionImage from "@/assets/vision-image.jpg";
 
 const Vision = () => {
   return (
@@ -7,8 +8,12 @@ const Vision = () => {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Image (on left for desktop) */}
           <div className="animate-slide-up order-2 md:order-1">
-            <div className="bg-accent/5 rounded-3xl p-8 flex items-center justify-center h-64">
-              <Eye className="w-32 h-32 text-primary/20" />
+            <div className="rounded-3xl overflow-hidden shadow-2xl h-64">
+              <img 
+                src={visionImage} 
+                alt="Our Vision - Future of Mobility"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           
