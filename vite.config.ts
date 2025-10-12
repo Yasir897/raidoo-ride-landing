@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   base: "/raidoo-ride-landing/", 
   server: {
-    host: "::",
+    host: ":",
     port: 8080,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
