@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20">
+    <section className="relative min-h-screen flex items-center pt-20 w-full">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -19,8 +19,8 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="w-full px-4 py-20 relative z-10">/
+        <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-primary-foreground space-y-6 animate-fade-in">
             <div className="inline-block">
@@ -42,7 +42,7 @@ const Hero = () => {
               <img 
                 src={phoneMockup}
                 alt="Raidoo App Interface"
-                className="w-64 md:w-80 drop-shadow-2xl"
+                className="w-48 md:w-64 lg:w-80 drop-shadow-2xl"
               />
             </div>
           </div>
