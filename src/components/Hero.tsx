@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
       
       {/* Content */}
-      <div className="w-full px-4 py-20 relative z-10">/
+      <div className="w-full px-4 py-20 relative z-10">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in">
