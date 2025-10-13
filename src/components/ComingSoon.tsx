@@ -1,8 +1,14 @@
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
 const ComingSoon = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-6">
+        <div className={`text-center space-y-6 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+        }`}>
           <div className="relative inline-block">
             <h2 className="text-4xl md:text-6xl font-bold text-foreground animate-pulse">
               Coming Soon

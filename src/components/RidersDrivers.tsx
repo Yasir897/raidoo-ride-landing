@@ -1,5 +1,6 @@
 import { User, Car } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const audiences = [
   {
@@ -17,22 +18,32 @@ const audiences = [
 ];
 
 const RidersDrivers = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-20 bg-muted/30">
+    <section ref={ref} className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
-          For Riders & Drivers
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Whether you need a ride or want to earn, Raidoo has you covered
-        </p>
+        <div className={`transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-foreground">
+            For Riders & Drivers
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Whether you need a ride or want to earn, Raidoo has you covered
+          </p>
+        </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {audiences.map((audience, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 border-border bg-card animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className={`group hover:shadow-2xl transition-all duration-700 hover:-translate-y-3 hover:scale-105 border-border bg-card ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ 
+                transitionDelay: isVisible ? `${index * 200}ms` : '0ms'
+              }}
             >
               <CardContent className="p-8 space-y-6">
                 <div className="flex items-center gap-4">

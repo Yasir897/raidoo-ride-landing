@@ -1,8 +1,14 @@
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
 const AboutUs = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-16 bg-background">
+    <section ref={ref} className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-4 animate-fade-in">
+        <div className={`max-w-4xl mx-auto text-center space-y-4 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             About Us
           </h2>
