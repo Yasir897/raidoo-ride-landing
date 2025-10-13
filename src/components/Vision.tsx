@@ -28,9 +28,7 @@ const Vision = () => {
               </h2>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              To become Pakistan's most trusted mobility platform, leading the way in innovation, 
-              sustainability, and customer satisfaction. We envision a future where every Pakistani 
-              has access to smart, efficient transportation at their fingertips.
+              To build Pakistan's most trusted and connected travel community — where shared rides become the easiest, safest, and most affordable way to travel.
             </p>
           </div>
         </div>

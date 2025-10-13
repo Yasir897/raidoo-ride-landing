@@ -17,9 +17,7 @@ const Mission = () => {
               </h2>
             </div>
             <p className="text-lg text-primary-foreground/90 leading-relaxed">
-              To provide safe, reliable, and affordable ride-sharing services that empower communities 
-              across Pakistan. We're dedicated to creating opportunities for drivers while ensuring 
-              riders experience comfort and convenience in every journey.
+              To make everyday travel easier, safer, and more affordable for everyone. We will connect people going in the same direction — like students heading to college or workers going to their jobs — so they can share rides, save money, and travel comfortably together.
             </p>
           </div>
           
