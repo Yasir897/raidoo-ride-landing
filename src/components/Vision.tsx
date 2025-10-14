@@ -6,7 +6,7 @@ const Vision = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section ref={ref} className="py-16 bg-gradient-to-b from-primary to-background">
+    <section ref={ref} className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* Image (on left for desktop) */}
