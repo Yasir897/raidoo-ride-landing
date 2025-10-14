@@ -7,28 +7,27 @@ interface TypewriterTextProps {
 
 const TypewriterText = ({ text, className = '' }: TypewriterTextProps) => {
   const [displayedText, setDisplayedText] = useState('');
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const words = text.split(' ');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentWordIndex < words.length) {
-        setDisplayedText(prev => {
-          const newText = prev ? prev + ' ' + words[currentWordIndex] : words[currentWordIndex];
-          return newText;
-        });
-        setCurrentWordIndex(prev => prev + 1);
-      } else {
-        // Wait 5 seconds before restarting
-        setTimeout(() => {
-          setDisplayedText('');
-          setCurrentWordIndex(0);
-        }, 5000);
-      }
-    }, 300); // Speed of typing each word
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(text.substring(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, 100); // Speed of typing each letter
 
-    return () => clearInterval(interval);
-  }, [currentWordIndex, words]);
+      return () => clearTimeout(timeout);
+    } else {
+      // Show blinking cursor for 5 seconds, then restart
+      const restartTimeout = setTimeout(() => {
+        setDisplayedText('');
+        setCurrentIndex(0);
+      }, 5000);
+
+      return () => clearTimeout(restartTimeout);
+    }
+  }, [currentIndex, text]);
 
   return (
     <span className={className}>
