@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
 import phoneMockup from "@/assets/phone-mockup.png";
 import TypewriterText from "@/components/TypewriterText";
+import AnimatedCircles from "@/components/AnimatedCircles";
 
 const Hero = () => {
   const scrollToQR = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 w-full">
+    <section className="relative min-h-screen flex items-center pt-20 w-full overflow-hidden">
       {/* Background Image with Overlay - Fixed Parallax */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-50 bg-fixed"
@@ -18,6 +19,9 @@ const Hero = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-accent/15" />
       </div>
+      
+      {/* Animated SVG Circles */}
+      <AnimatedCircles />
       
       {/* Content */}
       <div className="w-full px-4 py-20 relative z-10">
