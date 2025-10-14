@@ -1,21 +1,9 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
 import phoneMockup from "@/assets/phone-mockup.png";
 import TypewriterText from "@/components/TypewriterText";
 
 const Hero = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const scrollToQR = () => {
     const qrSection = document.getElementById('qr-section');
     qrSection?.scrollIntoView({ behavior: 'smooth' });
@@ -25,11 +13,8 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 w-full">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-50 transition-transform duration-100 ease-out"
-        style={{ 
-          backgroundImage: `url(${heroBackground})`,
-          transform: `translateY(${scrollY * 0.5}px)`
-        }}
+        className="absolute inset-0 bg-cover bg-center opacity-50"
+        style={{ backgroundImage: `url(${heroBackground})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-accent/15" />
       </div>
