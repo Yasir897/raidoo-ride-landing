@@ -24,15 +24,13 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in">
             <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative">
-                <span className="relative z-10 bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
-                  It's more than a ride — it's Raido.
-                </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative text-primary">
+                More than a ride — it's Raido
                 <div className="absolute -inset-4 bg-primary/10 blur-3xl -z-10 rounded-full" />
               </h2>
             </div>
-            <p className="text-lg md:text-xl text-foreground/80 max-w-xl leading-relaxed">
-              <span className="text-primary font-semibold">Raido</span> — Pakistan's first homegrown ride-hailing company — is committed to making travelling more affordable, easier, safer, not just for passengers, but for riders too.
+            <p className="text-lg md:text-xl text-white max-w-xl leading-relaxed">
+              Raido — Pakistan's first homegrown ride-hailing company — is committed to making travelling more affordable, easier, safer, not just for passengers, but for riders too.
             </p>
           </div>
           

@@ -11,6 +11,15 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/80">
               Ride smart. Go Raidoo.
             </p>
+            <button 
+              onClick={() => {
+                const aboutSection = document.getElementById('about-us');
+                aboutSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="mt-4 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors underline"
+            >
+              About Us
+            </button>
           </div>
           
           {/* Contact Us */}
