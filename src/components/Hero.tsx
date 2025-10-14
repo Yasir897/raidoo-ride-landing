@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
 import phoneMockup from "@/assets/phone-mockup.png";
+import TypewriterText from "@/components/TypewriterText";
 
 const Hero = () => {
   const scrollToQR = () => {
@@ -24,8 +25,8 @@ const Hero = () => {
           {/* Left Content */}
           <div className="space-y-6 animate-fade-in">
             <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative text-primary">
-                More than a ride — it's Raido
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 relative text-primary min-h-[120px] md:min-h-[140px] lg:min-h-[160px]">
+                <TypewriterText text="More than a ride — it's Raido" />
                 <div className="absolute -inset-4 bg-primary/10 blur-3xl -z-10 rounded-full" />
               </h2>
             </div>
