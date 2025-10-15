@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
-import phoneMockup from "@/assets/phone-mockup.png";
+import phoneMockup from "@/assets/phone-3d-mockup.png";
 import TypewriterText from "@/components/TypewriterText";
 import AnimatedCircles from "@/components/AnimatedCircles";
 
@@ -42,11 +42,11 @@ const Hero = () => {
           {/* Right Content - Phone Mockup */}
           <div className="flex justify-end items-start animate-fade-in animate-delay-200 -mt-12 lg:-mt-20">
             {/* Phone Mockup */}
-            <div className="relative animate-float">
+            <div className="relative animate-float perspective-1000">
               <img 
                 src={phoneMockup}
                 alt="Raidoo App Interface"
-                className="w-48 md:w-64 lg:w-80 drop-shadow-2xl"
+                className="w-48 md:w-64 lg:w-80 drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
