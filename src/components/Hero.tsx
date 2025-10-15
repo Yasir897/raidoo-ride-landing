@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
+import phoneMockup from "@/assets/phone-mockup.png";
 import TypewriterText from "@/components/TypewriterText";
 import AnimatedCircles from "@/components/AnimatedCircles";
-import Phone3D from "@/components/Phone3D";
 
 const Hero = () => {
   const scrollToQR = () => {
@@ -39,9 +39,16 @@ const Hero = () => {
             </p>
           </div>
           
-          {/* Right Content - 3D Phone Model */}
-          <div className="flex justify-center items-center animate-fade-in animate-delay-200">
-            <Phone3D />
+          {/* Right Content - Phone Mockup */}
+          <div className="flex justify-end items-start animate-fade-in animate-delay-200 -mt-12 lg:-mt-20">
+            {/* Phone Mockup */}
+            <div className="relative animate-float">
+              <img 
+                src={phoneMockup}
+                alt="Raidoo App Interface"
+                className="w-48 md:w-64 lg:w-80 drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </div>
