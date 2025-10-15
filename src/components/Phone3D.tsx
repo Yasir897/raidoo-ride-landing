@@ -17,12 +17,21 @@ const PhoneModel = () => {
 
   return (
     <group ref={groupRef} rotation={[0.2, 0.3, 0]}>
-      {/* Phone Body (Aluminum frame) */}
+      {/* Phone Body (Titanium frame - iPhone 15 Pro Max style) */}
       <RoundedBox args={[2, 4.2, 0.15]} radius={0.15} smoothness={4} position={[0, 0, 0]}>
         <meshStandardMaterial 
-          color="#2c2c2c" 
-          metalness={0.9} 
-          roughness={0.3}
+          color="#5a5a5a" 
+          metalness={0.95} 
+          roughness={0.15}
+        />
+      </RoundedBox>
+      
+      {/* Back glass */}
+      <RoundedBox args={[1.98, 4.18, 0.05]} radius={0.14} smoothness={4} position={[0, 0, -0.08]}>
+        <meshStandardMaterial 
+          color="#c8c8d0"
+          metalness={0.3}
+          roughness={0.1}
         />
       </RoundedBox>
       
@@ -31,12 +40,12 @@ const PhoneModel = () => {
         <meshStandardMaterial color="#000000" />
       </RoundedBox>
       
-      {/* Screen with Map texture */}
-      <RoundedBox args={[1.85, 4.0, 0.01]} radius={0.12} smoothness={4} position={[0, 0, 0.13]}>
+      {/* Screen with Map texture - Full screen */}
+      <RoundedBox args={[1.9, 4.1, 0.01]} radius={0.12} smoothness={4} position={[0, 0, 0.13]}>
         <meshStandardMaterial 
           map={texture} 
           emissive="#ffffff"
-          emissiveIntensity={0.2}
+          emissiveIntensity={0.3}
         />
       </RoundedBox>
       
@@ -69,43 +78,64 @@ const PhoneModel = () => {
         <meshStandardMaterial color="#2c2c2c" metalness={0.8} roughness={0.3} />
       </mesh>
       
-      {/* Back camera module */}
-      <group position={[-0.65, 1.5, -0.09]}>
-        <RoundedBox args={[0.5, 0.5, 0.05]} radius={0.1} smoothness={4}>
-          <meshStandardMaterial color="#1a1a1a" metalness={0.8} roughness={0.2} />
-        </RoundedBox>
-        {/* Triple camera lenses */}
-        <mesh position={[-0.1, 0.1, 0.04]}>
-          <cylinderGeometry args={[0.12, 0.12, 0.03, 32]} />
-          <meshStandardMaterial color="#0a0a0a" metalness={1} roughness={0.1} />
-          <mesh position={[0, 0, 0.01]}>
-            <cylinderGeometry args={[0.08, 0.08, 0.01, 32]} />
-            <meshStandardMaterial color="#1a4d8f" metalness={0.9} roughness={0.1} />
-          </mesh>
-        </mesh>
-        <mesh position={[0.1, 0.1, 0.04]}>
-          <cylinderGeometry args={[0.12, 0.12, 0.03, 32]} />
-          <meshStandardMaterial color="#0a0a0a" metalness={1} roughness={0.1} />
-          <mesh position={[0, 0, 0.01]}>
-            <cylinderGeometry args={[0.08, 0.08, 0.01, 32]} />
-            <meshStandardMaterial color="#1a4d8f" metalness={0.9} roughness={0.1} />
-          </mesh>
-        </mesh>
-        <mesh position={[-0.1, -0.1, 0.04]}>
-          <cylinderGeometry args={[0.12, 0.12, 0.03, 32]} />
-          <meshStandardMaterial color="#0a0a0a" metalness={1} roughness={0.1} />
-          <mesh position={[0, 0, 0.01]}>
-            <cylinderGeometry args={[0.08, 0.08, 0.01, 32]} />
-            <meshStandardMaterial color="#1a4d8f" metalness={0.9} roughness={0.1} />
-          </mesh>
-        </mesh>
-        {/* Flash */}
-        <mesh position={[0.1, -0.1, 0.04]}>
-          <cylinderGeometry args={[0.08, 0.08, 0.02, 32]} />
+      {/* Back camera module - iPhone 15 Pro Max style */}
+      <group position={[-0.65, 1.5, -0.11]}>
+        {/* Camera bump base */}
+        <RoundedBox args={[0.65, 0.65, 0.08]} radius={0.15} smoothness={4}>
           <meshStandardMaterial 
-            color="#fff5e1" 
-            emissive="#fff5e1"
-            emissiveIntensity={0.3}
+            color="#4a4a52" 
+            metalness={0.9} 
+            roughness={0.2}
+          />
+        </RoundedBox>
+        
+        {/* Main camera (top left) */}
+        <mesh position={[-0.13, 0.13, 0.05]}>
+          <cylinderGeometry args={[0.14, 0.14, 0.04, 32]} />
+          <meshStandardMaterial color="#1a1a1a" metalness={1} roughness={0.1} />
+          <mesh position={[0, 0, 0.015]}>
+            <cylinderGeometry args={[0.1, 0.1, 0.01, 32]} />
+            <meshStandardMaterial color="#2a5a8f" metalness={0.9} roughness={0.05} />
+          </mesh>
+        </mesh>
+        
+        {/* Ultra-wide camera (top right) */}
+        <mesh position={[0.13, 0.13, 0.05]}>
+          <cylinderGeometry args={[0.14, 0.14, 0.04, 32]} />
+          <meshStandardMaterial color="#1a1a1a" metalness={1} roughness={0.1} />
+          <mesh position={[0, 0, 0.015]}>
+            <cylinderGeometry args={[0.1, 0.1, 0.01, 32]} />
+            <meshStandardMaterial color="#2a5a8f" metalness={0.9} roughness={0.05} />
+          </mesh>
+        </mesh>
+        
+        {/* Telephoto camera (bottom left) */}
+        <mesh position={[-0.13, -0.13, 0.05]}>
+          <cylinderGeometry args={[0.14, 0.14, 0.04, 32]} />
+          <meshStandardMaterial color="#1a1a1a" metalness={1} roughness={0.1} />
+          <mesh position={[0, 0, 0.015]}>
+            <cylinderGeometry args={[0.1, 0.1, 0.01, 32]} />
+            <meshStandardMaterial color="#2a5a8f" metalness={0.9} roughness={0.05} />
+          </mesh>
+        </mesh>
+        
+        {/* LiDAR scanner (bottom right) */}
+        <mesh position={[0.13, -0.13, 0.05]}>
+          <cylinderGeometry args={[0.09, 0.09, 0.03, 32]} />
+          <meshStandardMaterial 
+            color="#0a0a0a" 
+            metalness={0.8} 
+            roughness={0.3}
+          />
+        </mesh>
+        
+        {/* Flash */}
+        <mesh position={[0.0, -0.25, 0.04]}>
+          <cylinderGeometry args={[0.06, 0.06, 0.02, 32]} />
+          <meshStandardMaterial 
+            color="#fff8e1" 
+            emissive="#fff8e1"
+            emissiveIntensity={0.4}
           />
         </mesh>
       </group>
