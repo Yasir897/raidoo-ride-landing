@@ -8,7 +8,6 @@ import Services from "@/components/Services";
 import Mission from "@/components/Mission";
 import Vision from "@/components/Vision";
 import RidersDrivers from "@/components/RidersDrivers";
-import InteractiveMap from "@/components/InteractiveMap";
 import ComingSoon from "@/components/ComingSoon";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -33,8 +32,6 @@ const Index = () => {
         <Vision />
         <AnimatedDivider />
         <RidersDrivers />
-        <AnimatedDivider />
-        <InteractiveMap />
         <AnimatedDivider />
         <ComingSoon />
       </main>
